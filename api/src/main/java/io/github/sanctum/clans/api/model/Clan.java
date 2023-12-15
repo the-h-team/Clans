@@ -40,11 +40,25 @@ public interface Clan extends ClanModel, Nickname.Target, Bio.Target {
      */
     @ClanTag @NotNull String getTag(); // moved from getName
 
-    // see Nickname.Target for Nickname
+    /**
+     * Gets the nickname of this clan if defined.
+     *
+     * @return the nickname of this clan or null
+     * @see Nickname#MINIMUM_FORMAT
+     */
+    @Override
+    @Nickname @Nullable String getNickname();
 
     // TODO palette
 
-    // see Bio.Target for getBio (moved from getDescription)
+    /**
+     * Gets the clan's description if defined.
+     *
+     * @return the description of this clan or null
+     * @see Bio#MINIMUM_FORMAT
+     */
+    @Override
+    @Bio @Nullable String getBio(); // FIXME? need getDescription !null overload?
 
     /**
      * Gets the join password of this clan (if any).
