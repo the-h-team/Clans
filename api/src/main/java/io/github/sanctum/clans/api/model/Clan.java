@@ -67,13 +67,10 @@ public interface Clan extends ClanModel, Nickname.Target, Bio.Target {
      */
     @Nullable WorldPerspective getBase();
 
-    // TODO bring clearancelog into api
-    // getPermissions
-
     /**
      * Gets the amount of power held by this clan.
      *
-     * @return this clan's power as a double
+     * @return the clan power as a double
      */
     double getPower();
 
