@@ -1,6 +1,7 @@
 package io.github.sanctum.clans.api.model;
 
 import com.github.sanctum.panther.util.HUID;
+import io.github.sanctum.clans.api.model.data.*;
 import io.github.sanctum.labyrinth.loci.location.WorldPerspective;
 import org.intellij.lang.annotations.Pattern;
 import org.intellij.lang.annotations.RegExp;

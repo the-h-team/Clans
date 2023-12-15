@@ -1,4 +1,4 @@
-package io.github.sanctum.clans.api.model;
+package io.github.sanctum.clans.api.model.data;
 
 import org.intellij.lang.annotations.Pattern;
 import org.intellij.lang.annotations.RegExp;
