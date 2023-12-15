@@ -2,13 +2,10 @@ package io.github.sanctum.clans.api.model;
 
 import com.github.sanctum.panther.util.HUID;
 import io.github.sanctum.clans.api.model.data.*;
+import io.github.sanctum.clans.api.model.data.clan.*;
 import io.github.sanctum.labyrinth.loci.location.WorldPerspective;
-import org.intellij.lang.annotations.Pattern;
-import org.intellij.lang.annotations.RegExp;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.lang.annotation.Documented;
 
 /**
  * Represents the structures of a clan.
@@ -17,40 +14,6 @@ import java.lang.annotation.Documented;
  * @author ms5984
  */
 public interface Clan extends Nickname.Target, Bio.Target {
-    /**
-     * The required format of a clan tag.
-     * <p>
-     * Tags may only contain letters, numbers, underscores and hyphens; they
-     * must not begin or end with a hyphen and must not be an empty string.
-     */
-    @RegExp String TAG_FORMAT = "^\\w(?:[\\w-]*\\w)?$";
-
-    /**
-     * The required format of a clan password (if defined).
-     * <p>
-     * In general, clan passwords may contain any non-whitespace character.
-     * Additionally, they must not be an empty string.
-     */
-    @RegExp String PASSWORD_FORMAT = "^\\S+$";
-
-    /**
-     * Meta-annotation which marks a clan tag String representation.
-     * <p>
-     * Tags are used to identify clans in chat and other contexts.
-     */
-    @Documented
-    @Pattern(TAG_FORMAT)
-    @interface Tag {}
-
-    /**
-     * Meta-annotation which marks a clan password.
-     * <p>
-     * Passwords are used to restrict access to a clan.
-     */
-    @Documented
-    @Pattern(PASSWORD_FORMAT)
-    @interface Password {}
-
     /**
      * Represents boolean settings for a clan.
      *
@@ -113,7 +76,7 @@ public interface Clan extends Nickname.Target, Bio.Target {
      *
      * @return the tag of this clan
      */
-    @NotNull @Clan.Tag String getTag(); // moved from getName
+    @Tag @NotNull String getTag(); // moved from getName
 
     // see Nickname.Target for Nickname
 
@@ -126,7 +89,7 @@ public interface Clan extends Nickname.Target, Bio.Target {
      *
      * @return the join password of this clan or null
      */
-    @Nullable @Clan.Password String getPassword();
+    @Password @Nullable String getPassword();
 
     /**
      * Gets the owner of this clan.
