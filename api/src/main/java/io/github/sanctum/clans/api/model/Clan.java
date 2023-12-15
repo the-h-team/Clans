@@ -8,21 +8,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * Represents the structures of a clan.
+ * The interface for clan data.
  *
- * @since 3.0.0
+ * @since 1.6.0
  * @author ms5984
  */
 public interface Clan extends ClanModel, Nickname.Target, Bio.Target {
-    /**
-     * Represents the owner of a clan.
-     *
-     * @since 3.0.0
-     */
-    interface Owner {
-        // TODO checks + casts
-    }
-
     /**
      * Gets the HUID of this clan.
      *
@@ -67,12 +58,7 @@ public interface Clan extends ClanModel, Nickname.Target, Bio.Target {
      */
     @ClanPassword @Nullable String getPassword();
 
-    /**
-     * Gets the owner of this clan.
-     *
-     * @return the owner of this clan
-     */
-    @NotNull Clan.Owner getOwner();
+    // getOwner
 
     /**
      * Gets the location of the clan base.
