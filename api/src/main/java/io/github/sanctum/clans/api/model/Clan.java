@@ -3,6 +3,7 @@ package io.github.sanctum.clans.api.model;
 import com.github.sanctum.panther.util.HUID;
 import io.github.sanctum.clans.api.model.data.*;
 import io.github.sanctum.clans.api.model.data.clan.*;
+import io.github.sanctum.clans.api.util.Persistence;
 import io.github.sanctum.labyrinth.loci.location.WorldPerspective;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -79,13 +80,12 @@ public interface Clan extends ClanModel, Nickname.Target, Bio.Target {
     // TODO add cooldowns to api
     // getCooldown(String)
 
-    // TODO move pdc, rename system
-    // getValue(Class, String)
-    // getValue(TypeAdapter, String)
-    // getValue(String)
-    // setValue(String, R, boolean)
-
-    // TODO remove isValid, replace associated checks
+    /**
+     * Gets the persistence layer for this clan.
+     *
+     * @return the persistence layer
+     */
+    @NotNull Persistence getPersistence();
 
     /**
      * Gets the state of a boolean setting flag for this clan.
