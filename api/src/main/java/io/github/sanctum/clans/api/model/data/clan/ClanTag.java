@@ -16,8 +16,8 @@ import java.lang.annotation.Documented;
  * @author ms5984
  */
 @Documented
-@Pattern(Tag.FORMAT)
-public @interface Tag {
+@Pattern(ClanTag.FORMAT)
+public @interface ClanTag {
     /**
      * The required format of a clan tag.
      * <p>

@@ -76,7 +76,7 @@ public interface Clan extends Nickname.Target, Bio.Target {
      *
      * @return the tag of this clan
      */
-    @Tag @NotNull String getTag(); // moved from getName
+    @ClanTag @NotNull String getTag(); // moved from getName
 
     // see Nickname.Target for Nickname
 
@@ -89,7 +89,7 @@ public interface Clan extends Nickname.Target, Bio.Target {
      *
      * @return the join password of this clan or null
      */
-    @Password @Nullable String getPassword();
+    @ClanPassword @Nullable String getPassword();
 
     /**
      * Gets the owner of this clan.

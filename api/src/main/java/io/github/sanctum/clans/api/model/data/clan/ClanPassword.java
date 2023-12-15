@@ -17,8 +17,8 @@ import java.lang.annotation.Documented;
  * @author ms5984
  */
 @Documented
-@Pattern(Password.FORMAT)
-public @interface Password {
+@Pattern(ClanPassword.FORMAT)
+public @interface ClanPassword {
     /**
      * The required format of a clan password (if defined).
      * <p>
